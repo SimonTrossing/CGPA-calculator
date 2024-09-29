@@ -17,6 +17,7 @@ def get_courses():
         courses_dict.update({course:grade})
     return courses_dict
 
+
 def calculator(grades):
     courses = list(grades.keys())
     GPA = 0
@@ -25,7 +26,14 @@ def calculator(grades):
     GPA = GPA/len(courses)
     return GPA
 
+
+def weaklink(grades):
+    sorted_grades = sorted(grades)
+    return grades[sorted_grades[0]], sorted_grades[0]
+
+
 def main():
+    print(weaklink(get_courses()))
     print(f"your GPA is {calculator(get_courses())}")
     
 main()
