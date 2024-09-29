@@ -1,9 +1,19 @@
 def get_courses():
-    courses = int(input("How many courses do you take?"))
+    while True:
+        try:
+            courses = int(input("How many courses do you take?"))
+            break
+        except ValueError:
+            print("it needs to be a non-decimal number")
     courses_dict = {}
     for i in range(courses):
         course = input(f"what is your {i+1} course?")
-        grade = int(input(f"What was your grade in {course}?"))
+        while True:
+            try:
+                grade = int(input(f"What was your grade in {course}?"))
+                break
+            except ValueError:
+                print("it needs to be a non-decimal number")
         courses_dict.update({course:grade})
     return courses_dict
 
@@ -15,7 +25,8 @@ def calculator(grades):
     GPA = GPA/len(courses)
     return GPA
 
-
+def main():
+    print(f"your GPA is {calculator(get_courses())}")
     
-    
+main()
 
