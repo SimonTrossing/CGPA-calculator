@@ -26,11 +26,19 @@ class GPA_calc:
         for i in range(len(self.courses)):
             GPA += self.grade_score[self.grades[self.courses[i]]]
         GPA = GPA/len(self.courses)
-        return GPA
+        return round(GPA,2)
+    
 
-
+    def weakpoint(self):
+        lowest_grade = 100
+        for i in range(len(self.courses)):
+            if self.grade_score[self.grades[self.courses[i]]]<lowest_grade:
+                lowest_grade = self.grade_score[self.grades[self.courses[i]]]
+                
+        print(lowest_grade)
 def main():
     my_GPA_calc = GPA_calc()
     print(f"your GPA is {my_GPA_calc.calculator()}")
+    my_GPA_calc.weakpoint()
 main()
 
