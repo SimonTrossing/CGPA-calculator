@@ -1,8 +1,9 @@
 class GPA_calc:
     def __init__(self):
         self.courses = []
-        self.grades = self.get_courses()
         self.grade_score = {"A+":4,"A":4,"A-":3.7,"B+":3.3,"B":3,"B-":2.7,"C+":2.3,"C":2,"C-":1.7,"D+":1.3,"D":1,"F":0}
+        self.grades = self.get_courses()
+       
        
 
     def get_courses(self):
@@ -13,10 +14,13 @@ class GPA_calc:
             except ValueError:
                 print("it needs to be a non-decimal number")
         courses_dict = {}
+
         for i in range(courses):
             course = input(f"what is your {i+1} course?")
             self.courses.append(course)
-            grade = input(f"What was your grade in {course}?")
+            grade = ""
+            while grade not in self.grade_score.keys(): 
+                grade = input(f"What was your grade in {course}?")
             courses_dict.update({course:grade})
         return courses_dict
 
@@ -37,8 +41,9 @@ class GPA_calc:
                 lowest_grade = self.grades[self.courses[i]]
                 lowest_subject = self.courses[i]
         return lowest_grade, lowest_subject
-def main():
     
+
+def main():
     my_GPA_calc = GPA_calc()
     grade, subject = my_GPA_calc.weakpoint()
     print(f"your GPA is {my_GPA_calc.calculator()}")
