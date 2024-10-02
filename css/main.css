@@ -1,6 +1,25 @@
 form{
     display:grid;
-    grid-template-columns: repeat(6 1fr);
-    grid-template-rows: repeat(4 auto);
     text-align: center;
+}
+.course11{
+    margin:auto;
+    width:75%;
+    text-align: center;
+    display:grid;
+    grid-template-areas: 
+    "T1 T2"
+    "A1 A2";
+}
+.label11{
+    grid-area: T1;
+}
+.label1{
+    grid-area: T2;   
+}
+#course1{
+    grid-area: A1;
+}
+#grade1{
+    grid-area: A2;
 }
