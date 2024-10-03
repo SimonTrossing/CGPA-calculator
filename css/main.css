@@ -1,9 +1,18 @@
 form{
+    margin-top:40px;
     display:grid;
     text-align: center;
 }
-.course11{
+header{
+   margin:auto;
+   text-align: center;
+   border-bottom: solid 3px rgb(132, 132, 132);
+   width:75%;
+
+}
+.course1{
     margin:auto;
+    
     width:75%;
     text-align: center;
     display:grid;
@@ -11,15 +20,15 @@ form{
     "T1 T2"
     "A1 A2";
 }
-.label11{
-    grid-area: T1;
-}
 .label1{
-    grid-area: T2;   
+    grid-area: T2;
 }
-#course1{
-    grid-area: A1;
+.label{
+    grid-area: T1;   
 }
-#grade1{
+.course{
     grid-area: A2;
+}
+.grade{
+    grid-area: A1;
 }
